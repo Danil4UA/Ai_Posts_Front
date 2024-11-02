@@ -14,8 +14,8 @@ const Logout = (): JSX.Element => {
     const { setToken } = authContext;
     const [loading, setLoading] = useState(false);
 
-    const [snackbarOpen, setSnackbarOpen] = useState(false);
-    const [snackbarMessage, setSnackbarMessage] = useState("");
+    // const [snackbarOpen, setSnackbarOpen] = useState(false);
+    // const [snackbarMessage, setSnackbarMessage] = useState("");
 
     const handleLogout = async () => {
         setLoading(true);
@@ -36,13 +36,13 @@ const Logout = (): JSX.Element => {
             console.log("Logged out successfully");
 
             console.log(localStorage)
-            setSnackbarMessage("Logged out successfully");
+            // setSnackbarMessage("Logged out successfully");
         } catch (error) {
             console.error("Failed to logout:", error);
-            setSnackbarMessage("Failed to logout");
+            // setSnackbarMessage("Failed to logout");
         } finally {
             setLoading(false);
-            setSnackbarOpen(true);
+            // setSnackbarOpen(true);
         }
     };
 

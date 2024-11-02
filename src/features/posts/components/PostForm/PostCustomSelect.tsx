@@ -1,4 +1,3 @@
-import { FormControl} from '@mui/material';
 
 interface Props {
     label: string;
