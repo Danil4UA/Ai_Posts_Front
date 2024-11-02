@@ -21,7 +21,7 @@ const AccountPanel = () => {
 
         try {
             const response = await axios.put(
-                `http://localhost:5001/api/profiles/update/${userId}`,
+                `/api/profiles/update/${userId}`,
                 {
                     firstName: nameRef.current?.value,
                     lastName: lastNameRef.current?.value
@@ -56,7 +56,7 @@ const AccountPanel = () => {
         const fetchProfile = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5001/api/profiles/get/${userId}`,
+                    `/api/profiles/get/${userId}`,
                     { withCredentials: true }
                 );
 

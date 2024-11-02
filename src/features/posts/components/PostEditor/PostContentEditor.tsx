@@ -26,7 +26,7 @@ const PostContentEditor = ({ content, setContent, onChange }: PostContentEditorP
     try {
       setPreviousContent(content); // Save current content before refining
 
-      const response = await axios.post('http://localhost:5001/api/posts/refine', {
+      const response = await axios.post('/api/posts/refine', {
         originalContent: content,
         userRequest: userRequest,
       });

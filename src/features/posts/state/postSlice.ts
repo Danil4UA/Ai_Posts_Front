@@ -39,7 +39,7 @@ export interface Content {
         // characthersCount: number
 }
 
-const URL = "http://localhost:5001/api"
+const URL = "/api"
 
 
 const initialState: InitialStatePosts = {

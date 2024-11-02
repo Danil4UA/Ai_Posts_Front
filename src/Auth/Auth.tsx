@@ -30,7 +30,7 @@ const Auth = ({ children }: AuthProps) => {
             }
             try {
                 console.log("Making request with token:", token);
-                const response = await axios.get("http://localhost:5001/api/users/auth", {
+                const response = await axios.get("/api/users/auth", {
                     withCredentials: true,
                     headers: {
                         "x-access-token": token

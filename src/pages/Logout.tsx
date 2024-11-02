@@ -20,7 +20,7 @@ const Logout = (): JSX.Element => {
     const handleLogout = async () => {
         setLoading(true);
         try {
-            await axios.get("http://localhost:5001/api/users/logout", {
+            await axios.get("/api/users/logout", {
                 withCredentials: true,
             });
             localStorage.removeItem("accessToken");

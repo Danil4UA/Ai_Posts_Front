@@ -57,7 +57,7 @@ const IPhoneMockup = ({ content }: { content: string}): JSX.Element => {
                 {/* {imageUrl && (
                     <Box
                         component="img"
-                        src={imageUrl.startsWith("data") ? imageUrl : `http://localhost:5001${imageUrl}`}
+                        src={imageUrl.startsWith("data") ? imageUrl : `${imageUrl}`}
                         sx={{
                             width: '100%',
                             height: 'auto',

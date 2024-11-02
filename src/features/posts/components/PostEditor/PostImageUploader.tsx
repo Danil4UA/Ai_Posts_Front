@@ -27,7 +27,7 @@ const PostImageUploader = ({ imageUrl, onFileChange, onRemoveImage }: PostImageU
         <Box sx={{ position: 'relative', maxWidth: '200px', width: '100%', marginTop: 2 }}>
           <Box
             component="img"
-            src={imageUrl.startsWith("data") ? imageUrl : `http://localhost:5001${imageUrl}`}
+            src={imageUrl.startsWith("data") ? imageUrl : `${imageUrl}`}
             alt="Post Image"
             sx={{
               maxWidth: '100%',
