@@ -53,19 +53,24 @@ export const createPost = createAsyncThunk(
     "posts/create",
     async (content: Content) => {
         try {
-            console.log("making a request")
-            const response = await axios.post(`${URL}/posts/create`, {
-                content: content
-            },
-            {
-                withCredentials: true
-            })
+            console.log("making a request");
+            const response = await axios.post(
+                `${URL}/posts/create`,
+                {
+                    content: content
+                },
+                {
+                    headers: {
+                        "x-access-token": localStorage.getItem("accessToken")
+                    },
+                    withCredentials: true
+                }
+            );
 
             return response.data;
         } catch (error) {
-            console.log("error => ", error)
+            console.log("error => ", error);
         }
-       
     }
 );
 
