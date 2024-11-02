@@ -14,7 +14,7 @@ const Login = (): JSX.Element => {
 
   const handleLogin = async (email: string, password: string) => {
     try {
-      const response = await axios.post("http://localhost:5001/api/users/login", { email, password });
+      const response = await axios.post("https://ai-posts-back.onrender.com/api/users/login", { email, password });
       const {accessToken, user} = response.data
 
       setToken(accessToken);

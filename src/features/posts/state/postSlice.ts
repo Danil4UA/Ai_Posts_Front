@@ -39,7 +39,7 @@ export interface Content {
         // characthersCount: number
 }
 
-const URL = "/api"
+const URL = "https://ai-posts-back.onrender.com/api"
 
 
 const initialState: InitialStatePosts = {

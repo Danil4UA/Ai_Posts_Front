@@ -22,7 +22,7 @@ const Profile = ({ collapsed }: ProfileProps) => {
         const fetchProfile = async () => {
             try {
                 console.log("doing use effect...")
-                const response = await axios.get(`/api/profiles/get/${userId}`, {
+                const response = await axios.get(`https://ai-posts-back.onrender.com/api/profiles/get/${userId}`, {
                     withCredentials: true,
                 });
 

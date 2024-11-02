@@ -21,7 +21,7 @@ const AccountPanel = () => {
 
         try {
             const response = await axios.put(
-                `/api/profiles/update/${userId}`,
+                `https://ai-posts-back.onrender.com/api/profiles/update/${userId}`,
                 {
                     firstName: nameRef.current?.value,
                     lastName: lastNameRef.current?.value
@@ -56,7 +56,7 @@ const AccountPanel = () => {
         const fetchProfile = async () => {
             try {
                 const response = await axios.get(
-                    `/api/profiles/get/${userId}`,
+                    `https://ai-posts-back.onrender.com/api/profiles/get/${userId}`,
                     { withCredentials: true }
                 );
 

@@ -9,7 +9,7 @@ const Register = (): JSX.Element => {
 
   const handleRegister = async (email: string, password: string) => {
     try {
-      const response = await axios.post("/api/users/register", { email, password });
+      const response = await axios.post("https://ai-posts-back.onrender.com/api/users/register", { email, password });
       if (response.status === 201) navigate('/login');
     } catch {
       setError("Registration failed. Please try again.");

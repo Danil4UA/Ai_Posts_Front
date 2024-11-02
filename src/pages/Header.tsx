@@ -18,7 +18,7 @@ const Header = (): JSX.Element => {
     const handleLogout = async () => {
         setLoading(true);
         try {
-            await axios.get("/api/users/logout", {
+            await axios.get("https://ai-posts-back.onrender.com/api/users/logout", {
                 withCredentials: true,
             });
             localStorage.removeItem("token");
