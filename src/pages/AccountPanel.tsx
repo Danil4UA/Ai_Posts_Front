@@ -26,8 +26,9 @@ const AccountPanel = () => {
                     firstName: nameRef.current?.value,
                     lastName: lastNameRef.current?.value
                 },
-                {
-                    withCredentials: true
+                { headers: 
+                    { "x-access-token": localStorage.getItem("accessToken") }, 
+                    withCredentials: true 
                 }
             );
 
@@ -57,7 +58,7 @@ const AccountPanel = () => {
             try {
                 const response = await axios.get(
                     `https://ai-posts-back.onrender.com/api/profiles/get/${userId}`,
-                    { withCredentials: true }
+                    { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true }
                 );
 
                 if (response.status === 200) {

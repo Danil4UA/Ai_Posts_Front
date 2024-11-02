@@ -87,8 +87,13 @@ export const editPost = createAsyncThunk(
                 request: request
             },
             {
+                headers: {
+                    "x-access-token": localStorage.getItem("accessToken")
+                },
                 withCredentials: true
-            })
+            }
+        
+        )
 
             return response.data;
         } catch (error) {
@@ -103,8 +108,11 @@ export const deletePost = createAsyncThunk(
     "posts/deletePost",
     async (postId: number, { rejectWithValue }) => {
         try {
-            await axios.delete(`${URL}/posts/${postId}`, {
-                withCredentials: true,
+            await axios.delete(`${URL}/posts/${postId}`,  {
+                headers: {
+                    "x-access-token": localStorage.getItem("accessToken")
+                },
+                withCredentials: true
             });
             return postId; 
         } catch (error: any) {
@@ -117,8 +125,11 @@ export const deletePost = createAsyncThunk(
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async (_, { rejectWithValue }) => {
     try {
-        const response = await axios.get(`${URL}/posts/all`, {
-                withCredentials: true
+        const response = await axios.get(`${URL}/posts/all`,  {
+            headers: {
+                "x-access-token": localStorage.getItem("accessToken")
+            },
+            withCredentials: true
         });
         return response.data.posts;
     } catch (error: any) {

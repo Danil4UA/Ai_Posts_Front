@@ -50,6 +50,7 @@ const PostEditor = () => {
                         { 
                             headers: {
                                 'Content-Type': 'multipart/form-data',
+                                "x-access-token": localStorage.getItem("accessToken")
                             },
                             withCredentials: true 
                         }

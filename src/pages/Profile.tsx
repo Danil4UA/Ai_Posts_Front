@@ -22,9 +22,7 @@ const Profile = ({ collapsed }: ProfileProps) => {
         const fetchProfile = async () => {
             try {
                 console.log("doing use effect...")
-                const response = await axios.get(`https://ai-posts-back.onrender.com/api/profiles/get/${userId}`, {
-                    withCredentials: true,
-                });
+                const response = await axios.get(`https://ai-posts-back.onrender.com/api/profiles/get/${userId}`, { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true });
 
                 if (response.status === 200) {
                     const { first_name, last_name } = response.data;
