@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../App";
 import axios from "axios";
-import Login from "../features/auth/Login";
+// import Login from "../features/auth/Login";
 
 interface AuthProps {
     children: JSX.Element;
@@ -65,7 +65,7 @@ const Auth = ({ children }: AuthProps) => {
         verify();
     }, [setToken, token]);
 
-    return redirect ? children : <Login />;
+    return redirect ? children : "";
 };
 
 export default Auth;
