@@ -21,8 +21,11 @@ const AuthNavBar = ({ title }: AuthNavBarProps): JSX.Element => {
                 boxSizing: "border-box",
                 zIndex: 1,
             }}
+            className="auth-nav-bar"
         >
-            <div style={{
+            <div 
+            className="auth-nav-logo"
+            style={{
                 backgroundImage: `url(${logo})`,
                 backgroundSize: "cover",
                 height: "70px",
