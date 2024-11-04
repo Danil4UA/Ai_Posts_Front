@@ -244,6 +244,8 @@ button {
 }
 
 /* Стиль для Select */
+
+
 .custom-select {
   background-color: rgb(233, 233, 233);
   border-radius: 7px;
@@ -394,15 +396,13 @@ align-items: center; */
 .form-select-container {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
   gap: 10px;
 }
 
 
 
 .generate-post-select{
-  /* display: inline-block;
-  color  */
+
   font-size: 18px;
   padding: 8px 16px;
 }
@@ -517,6 +517,9 @@ align-items: center; */
 } */
 
 .post-editor-buttons {
+  position: absolute;
+  top: 16px;
+  right: 24px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
@@ -602,11 +605,13 @@ align-items: center; */
 
   
   transition: width 0.3s;
+  /* display: none; */
 }
 .side-bar.collapsed {
   width: 68px; 
   align-items: center;
-  padding-top: 26px
+  padding-top: 26px;
+  /* display: none; */
 }
 
 .pages {
@@ -631,8 +636,6 @@ align-items: center; */
   border-right: 3px solid rgb(97, 96, 96); 
   border-radius: 3px;
 }
-
-
 
 
 /* Profile */
@@ -975,8 +978,6 @@ align-items: center; */
 }
 
 
-
-
 .burger {
   display: none;
 }
@@ -999,6 +1000,11 @@ align-items: center; */
   main {
     margin: 0 !important;
   }
+
+
+
+
+
 
 
 

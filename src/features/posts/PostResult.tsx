@@ -59,7 +59,7 @@ const PostResult = (): JSX.Element | null => {
 
             {currentResult.content !== "Loading..." &&
 
-                <div className="post-editor-buttons" style={{position:"absolute", top:"16px", right:"24px"}}>
+                <div className="post-editor-buttons">
                 <button
                     onClick={() => handleEdit(currentResult.id)}
                     className="button primary-button save-button"
