@@ -994,7 +994,7 @@ align-items: center; */
   }
 
   .burger {
-    display: block;
+    display: none;
   }
   
   main {
@@ -1124,4 +1124,37 @@ align-items: center; */
       background-size:contain !important;
       background-repeat: no-repeat;
     } 
+
+
+
+
+
+
+
+
+
+    /* Post editor */
+
+    /* right */
+    .post-editor-right {
+      display: none;
+    }
+    .post-editor-buttons-phone {
+      position: fixed;
+      top: 7px;
+      right: 7px;
+      gap: 7px;
+    }
+    .content-input {
+      max-height: 450px !important;
+    }
+    .refine-post-container {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      height: 90vh;    
+      box-sizing: border-box;
+    }
+    
 }

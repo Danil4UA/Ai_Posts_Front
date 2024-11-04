@@ -45,12 +45,11 @@ const PostEditor = () => {
                     formData.append('content', content || '');
 
                     const response = await axios.put(
-                        `https://ai-posts-back.onrender.com/api/posts/edit/${foundPost.id}`, 
+                        `http://localhost:5001/api/posts/edit/${foundPost.id}`, 
                         formData,
                         { 
                             headers: {
                                 'Content-Type': 'multipart/form-data',
-                                "x-access-token": localStorage.getItem("accessToken")
                             },
                             withCredentials: true 
                         }
@@ -109,7 +108,7 @@ const PostEditor = () => {
                 <PostContentEditor content={content} setContent={setContent} onChange={handleContentChange} />
               </div>
 
-              <div className="post-editor-buttons" style={{position:"absolute", top:"16px", right:"24px"}}>
+              <div className="post-editor-buttons post-editor-buttons-phone">
                 <PostSavePublishButtons isSaving={isSaving} onSave={handleSave} onPublish={handlePublish}  />
               </div>
 
@@ -129,6 +128,7 @@ const PostEditor = () => {
 
           <IPhoneMockup content={content}/>
         </div>
+
       </div>
 
     </div>
