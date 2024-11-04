@@ -2,6 +2,7 @@ import { Outlet, useLocation, Navigate } from "react-router-dom";
 import Aside from "./Aside"; 
 import { Box } from "@mui/material";
 import { useState } from "react";
+import Burger from "./Burger";
 
 const componentNames: Record<string, string> = {
     "/login": "Login",
@@ -26,6 +27,7 @@ const Layout = (): JSX.Element => {
         return saved === 'true';
     });
 
+
     const toggleCollapse = () => {
         setCollapsed(prev => {
             const newValue = !prev;
@@ -39,19 +41,18 @@ const Layout = (): JSX.Element => {
     }
     return (
         <Box sx={{ display: "flex", height: "100vh" }}>
+
             {!hideLayout && <Aside collapsed={collapsed} toggleCollapse={toggleCollapse} />}
+
             <Box component="main" sx={{ 
                 flexGrow: 1, marginLeft: hideLayout ? "0" : collapsed ? "68px" : "220px", transition: "margin-left 0.3s ease",
                 position: "relative", // relative
 
                 }}>
+
+                {!hideLayout && <Burger />}
                 {!hideLayout && (
-                    <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",                        
-
-
-
-                         
-                    }}>
+                    <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",}}>
                         {componentName}
                     </div>
                 )}

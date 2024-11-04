@@ -977,9 +977,26 @@ align-items: center; */
 
 
 
+.burger {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .generate-post-container {
     grid-template-columns: 1fr; /* Одна колонка на мобильных */
+  }
+
+  /** Side Bar  */
+
+  .side-bar {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+  
+  main {
+    margin: 0 !important;
   }
 }
