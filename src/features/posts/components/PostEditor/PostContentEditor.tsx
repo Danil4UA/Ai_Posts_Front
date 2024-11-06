@@ -1,7 +1,7 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
-
+import { API_BASE_URL_BACK } from "../../../../apiClient";
 interface PostContentEditorProps {
   content: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
@@ -26,7 +26,7 @@ const PostContentEditor = ({ content, setContent, onChange }: PostContentEditorP
     try {
       setPreviousContent(content); // Save current content before refining
 
-      const response = await axios.post('https://ai-posts-back.onrender.com/api/posts/refine', {
+      const response = await axios.post(`${API_BASE_URL_BACK}/api/posts/refine`, {
         originalContent: content,
         userRequest: userRequest,
       });

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { RootState } from "../../../app/store"
+import { API_BASE_URL_BACK } from "../../../apiClient";
 
 // import { PayloadAction } from "@reduxjs/toolkit";
 
@@ -39,7 +40,7 @@ export interface Content {
         // characthersCount: number
 }
 
-const URL = "https://ai-posts-back.onrender.com/api"
+const URL = `${API_BASE_URL_BACK}/api`
 
 
 const initialState: InitialStatePosts = {

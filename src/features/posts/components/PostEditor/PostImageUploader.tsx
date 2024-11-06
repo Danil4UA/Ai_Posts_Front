@@ -1,7 +1,7 @@
 import { Box, IconButton, Button } from "@mui/material";
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { API_BASE_URL_BACK } from "../../../../apiClient";
 interface PostImageUploaderProps {
   imageUrl: string | null;
   onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -27,7 +27,7 @@ const PostImageUploader = ({ imageUrl, onFileChange, onRemoveImage }: PostImageU
         <Box sx={{ position: 'relative', maxWidth: '200px', width: '100%', marginTop: 2 }}>
           <Box
             component="img"
-            src={imageUrl.startsWith("data") ? imageUrl : `https://ai-posts-back.onrender.com${imageUrl}`}
+            src={imageUrl.startsWith("data") ? imageUrl : `${API_BASE_URL_BACK}${imageUrl}`}
             alt="Post Image"
             sx={{
               maxWidth: '100%',

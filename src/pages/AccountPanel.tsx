@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-
+import { API_BASE_URL_BACK } from '../apiClient';
 const AccountPanel = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [firstName, setFirstName] = useState('');
@@ -21,7 +21,7 @@ const AccountPanel = () => {
 
         try {
             const response = await axios.put(
-                `https://ai-posts-back.onrender.com/api/profiles/update/${userId}`,
+                `${API_BASE_URL_BACK}/api/profiles/update/${userId}`,
                 {
                     firstName: nameRef.current?.value,
                     lastName: lastNameRef.current?.value
@@ -57,7 +57,7 @@ const AccountPanel = () => {
         const fetchProfile = async () => {
             try {
                 const response = await axios.get(
-                    `https://ai-posts-back.onrender.com/api/profiles/get/${userId}`,
+                    `${API_BASE_URL_BACK}/api/profiles/get/${userId}`,
                     { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true }
                 );
 

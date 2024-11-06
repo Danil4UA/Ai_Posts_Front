@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../App";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL_BACK } from "../apiClient";
 
 
 
@@ -20,7 +21,7 @@ const Logout = (): JSX.Element => {
     const handleLogout = async () => {
         setLoading(true);
         try {
-            await axios.get("https://ai-posts-back.onrender.com/api/users/logout", { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true });
+            await axios.get(`${API_BASE_URL_BACK}/api/users/logout`, { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true });
             localStorage.removeItem("accessToken");
 
 

@@ -54,21 +54,6 @@ const IPhoneMockup = ({ content }: { content: string}): JSX.Element => {
                     </IconButton>
                 </Box>
 
-                {/* {imageUrl && (
-                    <Box
-                        component="img"
-                        src={imageUrl.startsWith("data") ? imageUrl : `https://ai-posts-back.onrender.com${imageUrl}`}
-                        sx={{
-                            width: '100%',
-                            height: 'auto',
-                            mb: 1.7, // 2px * 0.85
-                            boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.2)',
-                            borderRadius: '0px',
-                            margin: '0',
-                        }}
-                    />
-                )} */}
-
                 {/* Post content with paragraphs */}
                 <Box sx={{ width: '100%', maxHeight: '170px', overflowY: 'auto', mb: 0.85 }}>
                     <Typography variant="body2" sx={{ mt: 0.85 }}>

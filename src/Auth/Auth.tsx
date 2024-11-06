@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../App";
 import axios from "axios";
+import { API_BASE_URL_BACK } from "../apiClient";
+
 // import Login from "../features/auth/Login";
 
 interface AuthProps {
@@ -30,7 +32,7 @@ const Auth = ({ children }: AuthProps) => {
             }
             try {
                 console.log("Making request with token:", token);
-                const response = await axios.get("https://ai-posts-back.onrender.com/api/users/auth", {
+                const response = await axios.get(`${API_BASE_URL_BACK}/api/users/auth`, {
                     withCredentials: true,
                     headers: {
                         "x-access-token": token

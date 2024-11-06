@@ -10,7 +10,7 @@ import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import TabletMacIcon from "@mui/icons-material/TabletMac";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import ChoosePlatform from "../../../../pages/ChoosePlatform";
-
+import { API_BASE_URL_BACK } from "../../../../apiClient";
 
 const PostEditor = () => {
   const { postId } = useParams();
@@ -45,7 +45,7 @@ const PostEditor = () => {
                     formData.append('content', content || '');
 
                     const response = await axios.put(
-                        `https://ai-posts-back.onrender.com/api/posts/edit/${foundPost.id}`, 
+                        `${API_BASE_URL_BACK}/api/posts/edit/${foundPost.id}`, 
                         formData,
                         { 
                             headers: {

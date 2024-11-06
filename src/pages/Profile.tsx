@@ -2,7 +2,7 @@ import { MoreVert } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 import UserInfo from './UserInfo';
 import axios from 'axios';
-
+import { API_BASE_URL_BACK } from '../apiClient';
 interface ProfileProps {
     collapsed: boolean;
 }
@@ -22,7 +22,7 @@ const Profile = ({ collapsed }: ProfileProps) => {
         const fetchProfile = async () => {
             try {
                 console.log("doing use effect...")
-                const response = await axios.get(`https://ai-posts-back.onrender.com/api/profiles/get/${userId}`, { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true });
+                const response = await axios.get(`${API_BASE_URL_BACK}/api/profiles/get/${userId}`, { headers: { "x-access-token": localStorage.getItem("accessToken") }, withCredentials: true });
 
                 if (response.status === 200) {
                     const { first_name, last_name } = response.data;

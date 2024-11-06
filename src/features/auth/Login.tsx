@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../App";
 import AuthForm from "./AuthForm";
+import { API_BASE_URL_BACK } from "../../apiClient";
 
 const Login = (): JSX.Element => {
   const [error, setError] = useState<string | null>(null);
@@ -14,7 +15,7 @@ const Login = (): JSX.Element => {
 
   const handleLogin = async (email: string, password: string) => {
     try {
-      const response = await axios.post("https://ai-posts-back.onrender.com/api/users/login", { email, password });
+      const response = await axios.post(`${API_BASE_URL_BACK}/api/users/login`, { email, password });
       const {accessToken, user} = response.data
 
       setToken(accessToken);
