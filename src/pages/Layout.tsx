@@ -27,6 +27,8 @@ const Layout = (): JSX.Element => {
         return saved === 'true';
     });
 
+    const [showMenu, setShowMenu] = useState(false)
+
 
     const toggleCollapse = () => {
         setCollapsed(prev => {
@@ -39,6 +41,12 @@ const Layout = (): JSX.Element => {
     if (!isAuthenticated && !hideLayout) {
         return <Navigate to="/login" replace />;
     }
+
+
+    const handleBurgerClick = () => {
+        setShowMenu(!showMenu)
+        console.log(showMenu)
+    }
     return (
         <Box sx={{ display: "flex", height: "100vh" }}>
 
@@ -46,11 +54,11 @@ const Layout = (): JSX.Element => {
 
             <Box component="main" sx={{ 
                 flexGrow: 1, marginLeft: hideLayout ? "0" : collapsed ? "68px" : "220px", transition: "margin-left 0.3s ease",
-                position: "relative", // relative
+                position: "relative", 
 
                 }}>
 
-                {!hideLayout && <Burger/>}
+                {!hideLayout && <Burger handleBurgerClick={handleBurgerClick} showMenu={showMenu} setShowMenu={setShowMenu}/>}
                 {!hideLayout && (
                     <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",}}>
                         {componentName}

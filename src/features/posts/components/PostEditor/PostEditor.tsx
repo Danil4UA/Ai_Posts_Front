@@ -109,7 +109,7 @@ const PostEditor = () => {
                 <PostContentEditor content={content} setContent={setContent} onChange={handleContentChange} />
               </div>
 
-              <div className="post-editor-buttons post-editor-buttons-phone">
+              <div className="post-editor-buttons">
                 <PostSavePublishButtons isSaving={isSaving} onSave={handleSave} onPublish={handlePublish}  />
               </div>
 

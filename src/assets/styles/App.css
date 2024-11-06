@@ -1139,10 +1139,16 @@ align-items: center; */
     .post-editor-right {
       display: none;
     }
+
+    .post-editor-left {
+      max-height: 90vh;
+      box-sizing: border-box;
+    }
+    
     .post-editor-buttons-phone {
       position: fixed;
       top: 7px;
-      right: 7px;
+      right: 50px;
       gap: 7px;
     }
     .content-input {
@@ -1156,5 +1162,12 @@ align-items: center; */
       height: 90vh;    
       box-sizing: border-box;
     }
+    
+
+    /* Post List */
+    .manage-account {
+      width: 100%;
+    }
+
     
 }

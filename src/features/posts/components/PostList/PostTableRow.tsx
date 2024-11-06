@@ -2,7 +2,6 @@ import { TableRow, TableCell, Checkbox, Tooltip, Typography, IconButton } from '
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 
-
 interface PostTableRowProps {
     post: any;
     isSelected: boolean;
@@ -11,16 +10,16 @@ interface PostTableRowProps {
     onDelete: () => void;
     showCheckbox?: boolean;
 }
-
 const PostTableRow = ({ post, isSelected, onSelect, onEdit, onDelete, showCheckbox }: PostTableRowProps) => {
     return (
-        <TableRow hover selected={isSelected} onClick={onSelect} 
-        sx={{ 
-            
-            '&:hover': { backgroundColor: '#f5f5f5' },
-            // padding: 0
-            
-            }}>
+        <TableRow 
+            hover 
+            selected={isSelected} 
+            onClick={onSelect} 
+            sx={{
+                '&:hover': { backgroundColor: '#f5f5f5' },
+            }}
+        >
             {showCheckbox && (
                 <TableCell onClick={(e) => e.stopPropagation()}>
                     <Checkbox checked={isSelected} onChange={onSelect} />
@@ -28,12 +27,20 @@ const PostTableRow = ({ post, isSelected, onSelect, onEdit, onDelete, showCheckb
             )}
             <TableCell>
                 <Tooltip title={post.content} arrow>
-                    <Typography variant="body2" noWrap>
-                        {post.content.length > 50 ? `${post.content.slice(0, 140)}...` : post.content}
+                    <Typography 
+                        variant="body2" 
+                        noWrap 
+                        sx={{
+                            maxWidth: { xs: 'clamp(80px, 40vw, 250px)', sm: 'clamp(120px, 50vw, 400px)', md: 'clamp(200px, 60vw, 700px)' },
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis',
+                            whiteSpace: 'nowrap',
+                        }}
+                    >
+                        {post.content}
                     </Typography>
                 </Tooltip>
             </TableCell>
-            {/* <TableCell>{post.scheduledAt ? new Date(post.scheduledAt).toLocaleString() : 'Not selected'}</TableCell> */}
             <TableCell align="right">
                 <IconButton
                     onClick={(e) => { e.stopPropagation(); onEdit(); }}
