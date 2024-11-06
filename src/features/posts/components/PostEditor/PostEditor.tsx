@@ -45,11 +45,12 @@ const PostEditor = () => {
                     formData.append('content', content || '');
 
                     const response = await axios.put(
-                        `https://ai-posts-front.onrender.com/posts/edit/${foundPost.id}`, 
+                        `https://ai-posts-back.onrender.com/api/posts/edit/${foundPost.id}`, 
                         formData,
                         { 
                             headers: {
                                 'Content-Type': 'multipart/form-data',
+                                "x-access-token": localStorage.getItem("accessToken")
                             },
                             withCredentials: true 
                         }
@@ -128,7 +129,6 @@ const PostEditor = () => {
 
           <IPhoneMockup content={content}/>
         </div>
-
       </div>
 
     </div>
