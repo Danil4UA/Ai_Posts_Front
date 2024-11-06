@@ -25,9 +25,8 @@ const Burger: React.FC<BurgerProps> = ({ handleBurgerClick, showMenu, setShowMen
                 className="burger"
                 style={{
                     position: 'absolute',
-                    top: '16px',
-                    right: '16px',
-                    zIndex: 1100,
+                    top: '18px',
+                    right: '24px',
                 }}
                 onClick={handleBurgerClick}
             >
@@ -69,6 +68,7 @@ const Burger: React.FC<BurgerProps> = ({ handleBurgerClick, showMenu, setShowMen
                     flexDirection: 'column',
                     justifyContent: 'center',
                     gap: '40px',
+                    fontSize:"16px",
                 }}
             >
                 <div onClick={() => handleNavigate('/')}>Dashboard</div>

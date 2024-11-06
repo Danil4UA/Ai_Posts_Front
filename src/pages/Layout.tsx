@@ -58,10 +58,11 @@ const Layout = (): JSX.Element => {
 
                 }}>
 
-                {!hideLayout && <Burger handleBurgerClick={handleBurgerClick} showMenu={showMenu} setShowMenu={setShowMenu}/>}
+                
                 {!hideLayout && (
-                    <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",}}>
+                    <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",}} className="header-top">
                         {componentName}
+                        {!hideLayout && <Burger handleBurgerClick={handleBurgerClick} showMenu={showMenu} setShowMenu={setShowMenu}/>}
                     </div>
                 )}
                 <Outlet />

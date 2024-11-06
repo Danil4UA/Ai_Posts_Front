@@ -64,7 +64,7 @@ const ManageAccount = () => {
     );
 
     return (
-        <div style={{display: "flex"}}>
+        <div style={{display: "flex"}} className="manage-account-container">
 
             <div className="manage-account"> 
                         <Snackbar
