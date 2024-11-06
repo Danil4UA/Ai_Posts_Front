@@ -45,7 +45,7 @@ const PostEditor = () => {
                     formData.append('content', content || '');
 
                     const response = await axios.put(
-                        `http://localhost:5001/api/posts/edit/${foundPost.id}`, 
+                        `https://ai-posts-front.onrender.com/posts/edit/${foundPost.id}`, 
                         formData,
                         { 
                             headers: {

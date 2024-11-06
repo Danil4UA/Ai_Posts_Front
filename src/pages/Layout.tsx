@@ -50,7 +50,7 @@ const Layout = (): JSX.Element => {
 
                 }}>
 
-                {!hideLayout && <Burger />}
+                {!hideLayout && <Burger/>}
                 {!hideLayout && (
                     <div style={{ borderBottom: "1px solid rgb(233, 233, 233)", padding: "16px 24px", fontSize:"32px",}}>
                         {componentName}
