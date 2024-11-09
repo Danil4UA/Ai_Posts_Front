@@ -52,7 +52,7 @@ const PostContentEditor = ({ content, setContent, onChange }: PostContentEditorP
 
   return (
     <div className="refine-post-container">
-      <div>
+      <div >
         <TextField
           fullWidth
           multiline
@@ -62,8 +62,7 @@ const PostContentEditor = ({ content, setContent, onChange }: PostContentEditorP
           className="content-input"
           sx={{
             maxHeight: '500px',
-            overflow: 'auto',
-          }}
+            overflow: 'auto', }}
         />
         {isRefined && (
           <button

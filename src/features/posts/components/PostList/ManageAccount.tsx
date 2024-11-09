@@ -90,6 +90,7 @@ const ManageAccount = () => {
                                 marginBottom: '20px',      // Отступ снизу
                                 textAlign: 'left'        // Выравнивание текста по центру
                             }}
+                            className="manage-account-main"
             >
                 
                     <PostTable 

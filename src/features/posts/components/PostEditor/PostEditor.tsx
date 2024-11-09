@@ -21,10 +21,6 @@ const PostEditor = () => {
   const overlayRef = useRef<HTMLDivElement | null>(null);
 
 
-
-  // const [imageUrl, setImageUrl] = useState<string | null>(null);
-
-
   const foundPost = posts.find((post: Post) => post.id === Number(postId));
 
   useEffect(() => {
@@ -109,9 +105,9 @@ const PostEditor = () => {
                 <PostContentEditor content={content} setContent={setContent} onChange={handleContentChange} />
               </div>
 
-              <div className="post-editor-buttons">
+              <div className="post-editor-buttons post-editor-mobile">
                 <PostSavePublishButtons isSaving={isSaving} onSave={handleSave} onPublish={handlePublish}  />
-              </div>
+              </div> 
 
             </>
           ) : (

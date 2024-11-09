@@ -1,4 +1,6 @@
 import { CircularProgress } from "@mui/material";
+import SaveIcon from "@mui/icons-material/Save";
+import PublishIcon from "@mui/icons-material/Publish";
 
 
 interface PostSavePublishButtonsProps {
@@ -15,7 +17,7 @@ const PostSavePublishButtons = ({ isSaving, onSave, onPublish }: PostSavePublish
         disabled={isSaving}
         className="button primary-button save-button"
       >
-        {isSaving ? <CircularProgress size={24} /> : "Save Changes"}
+        {isSaving ? <CircularProgress size={24} /> : <SaveIcon />}
       </button>
 
       <button
@@ -23,7 +25,7 @@ const PostSavePublishButtons = ({ isSaving, onSave, onPublish }: PostSavePublish
         disabled={isSaving}
         className="button primary-button save-button"
       >
-        {isSaving ? <CircularProgress size={24} /> : "Publish"}
+        {isSaving ? <CircularProgress size={24} /> : <PublishIcon />}
       </button>
     </>
   );
