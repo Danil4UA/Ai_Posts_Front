@@ -61,8 +61,9 @@ const PostContentEditor = ({ content, setContent, onChange }: PostContentEditorP
           onChange={onChange}
           className="content-input"
           sx={{
-            maxHeight: '500px',
-            overflow: 'auto', }}
+            maxHeight:"450px",
+            overflow: 'auto',
+           }}
         />
         {isRefined && (
           <button

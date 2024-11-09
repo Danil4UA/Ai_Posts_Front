@@ -67,7 +67,7 @@ const Auth = ({ children }: AuthProps) => {
         verify();
     }, [setToken, token]);
 
-    return redirect ? children : "";
+    return redirect ? children : null;
 };
 
 export default Auth;

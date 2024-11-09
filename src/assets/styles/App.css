@@ -1173,19 +1173,26 @@ align-items: center; */
 
     .content-input {
       max-height: auto !important;
-      /* overflow: auto !important; */
     }
 
-
     .refine-post-container {
-      padding: 0;
+      padding: 0 !important;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 70px) !important;    
+    }
+    
+    /* .refine-post-container {
+      box-sizing: border-box;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       gap: 16px;
-      height: calc(100vh - 70px);    
-      box-sizing: border-box;
-    }
+      height: 90vh;
+      justify-content: space-between;
     
+    }
+     */
 
 
 
